@@ -19,3 +19,13 @@ class User (models.Model):
 
     def __srt__(self):
         return self.username
+
+
+# Change
+class Report(models.Model):
+    username = models.CharField(max_length=300,blank=True,null=True)
+    reportText = models.TextField()
+    ID = models.IntegerField()
+
+    def __str__(self):
+        return str(self.ID)

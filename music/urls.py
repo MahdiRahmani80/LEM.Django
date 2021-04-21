@@ -13,4 +13,9 @@ urlpatterns = [
     path('create/user/',views.createUser.as_view(),name='Create User'),
     path('api-auth/', include('rest_framework.urls',namespace="api-main")),
 
+    # Add to project
+    # Report
+    url(r'^report/', views.reportMusic.as_view(), name='Report'),
+
+
 ]

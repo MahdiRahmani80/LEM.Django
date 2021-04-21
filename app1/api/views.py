@@ -1,5 +1,5 @@
-from app1.models import Music , User
-from app1.api.serializers import musicSerializer , userSerializer
+from app1.models import Music , User, Report
+from app1.api.serializers import musicSerializer , userSerializer , reportSerializer
 from rest_framework import generics
 
 class create(generics.CreateAPIView):
@@ -24,3 +24,9 @@ class user(generics.RetrieveUpdateAPIView):
 class createUser(generics.CreateAPIView):
     queryset = User.username
     serializer_class = userSerializer
+
+#  Change
+class reportMusic(generics.CreateAPIView):
+    queryset = Report.objects.all()
+    serializer_class = reportSerializer
+    lookup_field = 'id'
